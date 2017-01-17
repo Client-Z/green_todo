@@ -1,0 +1,141 @@
+/*@import "check-box";*/
+
+body, html{
+  color: white;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  background: #35dc9b;
+}
+
+header{
+	height: 5%;
+}
+
+h1{
+  display: table;
+  margin: 40px auto;
+  color: #fff;
+  font: 30px Helvetica;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.button {
+	transition: all 0.2s ease-in-out;
+    font: 18px Helvetica, Arial, sans-serif;
+    border: none;
+    background: #1aaf75;
+    color: #fff;
+    padding: 16px 40px;
+    margin-top: 40px;
+    width: 155px;
+    cursor: pointer;
+} 
+
+.button:active {
+	transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid #BD3E31;
+}
+
+.tasks-container{
+	margin-top: 40px;
+}
+
+.description{
+  display: block;
+  margin: 2em auto;
+  padding: 0.5em 0.25em;
+  border-radius: 0.1em;
+  width: 50%;
+  text-align: center;
+  font: 18px Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  border: none;
+  padding: 15px;    
+  margin-bottom: 40px;
+  font-size: 18px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/*	Check-Box  */
+
+.checkbox{
+  float: left;
+  height: 25px;
+  width: 10%;
+  position: absolute;
+  left: 0px;
+  margin-left: 0;
+  margin-top: 7px;
+}
+
+
+/*  End Check-Box styles  */
+
+.task{
+  display: block;
+  margin: 0px auto 5px auto;
+  border: none;
+  font-size: 1.2em;
+  width: 50%;
+  text-align: center;
+  background-color: #fff;
+  color: #555;
+  line-height: 2em;
+  position: relative;
+}
+
+.btn-del-all{
+  display: block;
+  float: right;
+  width: 15%;
+  height: 100%;
+  border: none;
+  background: #1aaf75;
+  color: #fff;
+}
+
+.btn-del-all:active {
+  transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+  border-bottom: 1px solid #BD3E31;
+}
+
+.btn-del{
+  float: right;
+  width: 15%;
+  background-color: #1aaf75;
+  color: #fff;
+  cursor: pointer;
+  line-height: 2em;
+}
+
+footer{
+	margin-bottom: 10px;
+	vertical-align: bottom;
+	position: absolute;
+  color: #fff;
+  font-size: 1.2em;
+  bottom: 10px;
+  width: 97%;
+  text-align: center;
+}
+
+.error{
+  display: block;
+  margin: 2em auto;
+  padding: 0.5em 0.25em;
+  border: 1px solid red;
+  border-radius: 0.2em;
+  font-size: 1.2em;
+  width: 50%;
+  text-align: center;
+  box-shadow: 0 0 1em 0.5em rgba(250,0,0,0.3);
+}
+
+.task-done{
+  text-decoration: line-through;
+}

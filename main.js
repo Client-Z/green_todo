@@ -1,4 +1,3 @@
-
 var tasksInfo = {
     countTasks: 0,
     tasks: []
@@ -9,20 +8,14 @@ function Task(taskDescription) {
 	this.taskStatus = "unchecked";
 };
 
-
 $(function(){
 	if (tasksOfStorage = JSON.parse(localStorage.getItem("info"))) {
 		for (var i = 0; i < tasksOfStorage.countTasks; i++) {
 			var description = tasksOfStorage.tasks[i].taskDescription;
 			renderTask(description);
-			/*if(tasksOfStorage.tasks[i].taskStatus == "checked"){
-				$(this).find("input:checkbox").prop("checked", true);
-				$(this).parent().addClass("task-done");
-			}*/
 		}
 	}
 });
-
 
 $("a#add").on('click', function(){
 	var tempValue = $(".description").val();
@@ -35,7 +28,6 @@ $("a#add").on('click', function(){
 	}
 
 });
-
 
 $("a#del-all").on('click', function(){
 	$('.task').remove();
@@ -50,8 +42,6 @@ $('.tasks-container').on('click', '.btn-del', function(e){
     $(this).parent().remove();
 });
 
-
-
 //checked:true
 $('.tasks-container').on('click', 'input:checkbox', function(e){
     $(this).parent().toggleClass("task-done");
@@ -60,7 +50,6 @@ $('.tasks-container').on('click', 'input:checkbox', function(e){
     console.log($(this).prop("checked"));
 
 });
-
 
 function isChecked(content){
     if($(this).prop("checked") == true){
@@ -85,10 +74,6 @@ function isChecked(content){
 	}
 }
 
-
-
-
-
 function createTask(taskDescription) {
 	var newTask = new Task(taskDescription);
 
@@ -110,22 +95,19 @@ function createTask(taskDescription) {
 	}
 } 
 
-
 function renderTask(description){
+	var container = $('.tasks-container');
 	$('<div class="task"></div>').appendTo(".tasks-container");
 	$('<span></span>').appendTo(".task:last-child");
-	$('.tasks-container').find(".task:last-child").find("span").text(description);
+	container.find(".task:last-child").find("span").text(description);
 
 	$('<input type="checkbox" name="check">').insertBefore($('.tasks-container').find(":last-child").find("span"));
-	$('.tasks-container').find("input").addClass("checkbox");
+	container.find("input").addClass("checkbox");
 
 	$('<a></a>').insertAfter($('.tasks-container').find(":last-child").find("span"));
-	$('.tasks-container').find(":last-child").find("a").text("Del");
-	$('.tasks-container').find(":last-child").find("a").addClass("btn-del");
-
-
+	container.find(":last-child").find("a").text("Del");
+	container.find(":last-child").find("a").addClass("btn-del");
 }
-
 
 function deleteTask(content){
 	var tasksInfoOfStorage = JSON.parse(localStorage.getItem("info"));
